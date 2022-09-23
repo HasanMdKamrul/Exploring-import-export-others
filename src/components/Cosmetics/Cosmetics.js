@@ -25,7 +25,7 @@ const Cosmetics = () => {
         <div>
             <h1>Cosmetics Component</h1>
             {
-                cosmetics.map(cosmetic => <CosmeticDisplay cosmetic={cosmetic}></CosmeticDisplay>)
+                cosmetics.map(cosmetic => <CosmeticDisplay key={cosmetic._id} cosmetic={cosmetic}></CosmeticDisplay>)
             }
         </div>
     );
