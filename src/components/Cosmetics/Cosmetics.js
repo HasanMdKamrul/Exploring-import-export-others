@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { getTotal } from '../../utilities/common';
 import CosmeticDisplay from '../CosmeticDisplay/CosmeticDisplay';
 
 const Cosmetics = () => {
@@ -19,11 +20,14 @@ const Cosmetics = () => {
         };
 
         dataLoader()
-    },[])
+    },[]);
+
+    const total = getTotal(cosmetics);
   
     return (
         <div>
             <h1>Cosmetics Component</h1>
+            <p>Total Price:{total}</p>
             {
                 cosmetics.map(cosmetic => <CosmeticDisplay key={cosmetic._id} cosmetic={cosmetic}></CosmeticDisplay>)
             }

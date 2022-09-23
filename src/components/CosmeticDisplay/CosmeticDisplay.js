@@ -10,17 +10,24 @@ const CosmeticDisplay = ({cosmetic}) => {
     const removeItemHandler = id => removeFromLs(id);
 
     const removeMinus = id => removeOneItem(id);
+
+  
+
     
     return (
-        <div className='product'>
-            <h2>Name:{name}</h2>
-            <h2>Price:{price}</h2>
-            <h2>Id:{_id}</h2>
-            {/* ** How to add event handler with paremeters */}
-            <button onClick={()=> buttonHandlerWithParams(_id)}>Add to Cart</button>
-            <button onClick={()=> removeMinus(_id)}>Remove One Item</button>
-            <button onClick={()=> removeItemHandler(_id)}>Remove Item</button>
+        <div>
+            
+            <div className='product'>
+                <h2>Name:{name}</h2>
+                <h2>Price:{price}</h2>
+                <h2>Id:{_id}</h2>
+                {/* ** How to add event handler with paremeters */}
+                <button onClick={()=> buttonHandlerWithParams(_id)}>Add to Cart</button>
+                <button onClick={()=> removeMinus(_id)}>Remove One Item</button>
+                <button onClick={()=> removeItemHandler(_id)}>Remove Item</button>
+            </div>
         </div>
+      
     );
 };
 
