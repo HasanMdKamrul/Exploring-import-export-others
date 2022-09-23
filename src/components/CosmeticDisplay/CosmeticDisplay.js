@@ -1,10 +1,11 @@
 import React from 'react';
+import { addToLs } from '../../utilities/manageDb';
 import './CosmeticDisplay.css';
 
 const CosmeticDisplay = ({cosmetic}) => {
     const {name,price,_id} = cosmetic;
     // ** Button handle
-    const buttonHandlerWithParams = id=>console.log(id,"Item Added");
+    const buttonHandlerWithParams = id=> addToLs(id);
     
     return (
         <div className='product'>
