@@ -9,7 +9,7 @@ const Cosmetics = () => {
     useEffect(()=>{
         const dataLoader = async()=>{
             try {
-                const response = await fetch('data.json');
+                const response = await fetch('https://mocki.io/v1/16ff9a9a-7ba6-4be0-9ea6-2fac00bc93b9');
                 response.ok? console.log('successful') : console.log('failed')
                 const data = await response.json();
                 setCosmetics(data)
