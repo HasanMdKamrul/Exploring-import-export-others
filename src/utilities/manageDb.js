@@ -1,12 +1,31 @@
 // ** manage the cart data 
 
+// ** 
+
+const getLsData = ()=>{
+    const storedData = JSON.parse(localStorage.getItem('shopping-cart'));
+
+    let cartValue = {};
+
+    storedData && (cartValue = storedData);
+
+    return cartValue;
+
+};
+
 const addToLs = (id)=>{
 
-    // ** get the data from ls
+    // ** get the stored value 
 
-    const quantity = localStorage.getItem(id);
+    const storedCartValue = getLsData();
 
-    quantity ? localStorage.setItem(id, parseInt(quantity) + 1) : localStorage.setItem(id,1) ;
+    if (storedCartValue[id]) {
+        storedCartValue[id] = storedCartValue[id] + 1;
+    } else {
+        storedCartValue[id] = 1;
+    }
+
+    localStorage.setItem('shopping-cart', JSON.stringify(storedCartValue));
 
    
 };
