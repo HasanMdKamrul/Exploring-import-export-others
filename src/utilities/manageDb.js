@@ -50,7 +50,27 @@ const removeFromLs = id => {
             localStorage.setItem('shopping-cart', JSON.stringify(storedCart));
         }
     }
-}
+};
 
-export { addToLs, removeFromLs };
+const removeOneItem = (id)=>{
+
+    // ** get the stored value 
+
+    const storedCartValue = getLsData();
+
+    if (storedCartValue[id]) {
+        storedCartValue[id] = storedCartValue[id] - 1;
+       
+        if(storedCartValue[id] === 0) {
+            delete storedCartValue[id];
+            localStorage.setItem('shopping-cart', JSON.stringify(storedCartValue));
+        };
+
+        localStorage.setItem('shopping-cart', JSON.stringify(storedCartValue));
+    } 
+
+   
+};
+
+export { addToLs, removeFromLs, removeOneItem };
 
