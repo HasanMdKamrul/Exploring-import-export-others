@@ -30,4 +30,27 @@ const addToLs = (id)=>{
    
 };
 
-export { addToLs };
+const removeFromLs = id => {
+    // ** Remove korte gele koyekta jinish check korte hobe
+
+    // ** 1st jinish 
+
+    // ** Total j object ta ase oita asholei exist kore kina , bcz oita na thakle oitar vitor er jinish o thakbe na tahole kivabe remove korbo
+
+    // ** Ei jonno first a stored ki ase oita k paite hobe (specific shooping cart ta)
+
+    const storedCart = getLsData();
+
+    if (storedCart) {
+        if (id in storedCart) {
+            delete storedCart[id];
+
+            // * delete korar por value ta abar ls a set kore dibo
+
+            localStorage.setItem('shopping-cart', JSON.stringify(storedCart));
+        }
+    }
+}
+
+export { addToLs, removeFromLs };
+
